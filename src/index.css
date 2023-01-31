@@ -29,8 +29,12 @@
 }
 
 .summary-container{
+  padding: 20px;
   grid-column: 1 / 2;
   border: 1px solid black;
+}
+.summary-container p{
+  font-size: medium;
 }
 
 .education-container{

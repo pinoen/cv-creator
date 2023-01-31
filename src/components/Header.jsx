@@ -4,6 +4,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EditIcon from '@mui/icons-material/Edit';
+import { IconButton } from '@mui/material';
 
 const Header = () => {
 
@@ -18,7 +20,10 @@ const Header = () => {
     <div className='header-container'
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}>
-      <button className='edit-header'>Edit</button>
+
+      <IconButton aria-label="edit" color="secondary">
+        <EditIcon on className='edit-header' />
+      </IconButton>
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
