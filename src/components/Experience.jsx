@@ -37,7 +37,7 @@ const Experience = () => {
         <h4>TechnipFMC</h4>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
           <EventIcon fontSize='small' color='action' /><p>07/2017 - 10/2019</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Mendoza, Argentina</p>
+          <LocationOnIcon fontSize='small' color='action' /><p>Neuquen, Argentina</p>
         </div>
       </div>
 
