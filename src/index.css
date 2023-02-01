@@ -58,6 +58,7 @@
 }
 
 .skills-container{
+  padding: 5px 20px;
   grid-column: 2 / 3;
   grid-row: 2 / 4;
   border: 1px solid black;
@@ -102,4 +103,11 @@ p, a{
 
 .section-title{
   font-size: medium;
+}
+
+span{
+  color: rgb(75,85,88);
+  font-size: small;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
