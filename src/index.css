@@ -26,13 +26,13 @@
   justify-content: space-between;
   padding: 5px 20px;
   grid-column: 1 / 3;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .summary-container{
   padding: 5px 20px;
   grid-column: 1 / 2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .summary-container p{
   font-size: medium;
@@ -41,39 +41,39 @@
 .education-container{
   padding: 5px 20px;
   grid-column: 1 / 2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .experience-container{
   padding: 5px 20px;
   grid-column: 1 / 2;
   grid-row: 4 / 6;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .tasks-container{
   padding: 5px 20px;
   grid-column: 1 / 2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .skills-container{
   padding: 5px 20px;
   grid-column: 2 / 3;
   grid-row: 2 / 5;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .projects-container{
   padding: 5px 20px;
   grid-column: 2 / 3;
   grid-row: 5 / 6;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .courses-container{
   padding: 5px 20px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 h1, h3{
