@@ -60,13 +60,13 @@
 .skills-container{
   padding: 5px 20px;
   grid-column: 2 / 3;
-  grid-row: 2 / 4;
+  grid-row: 2 / 5;
   border: 1px solid black;
 }
 
 .projects-container{
   grid-column: 2 / 3;
-  grid-row: 4 / 6;
+  grid-row: 5 / 6;
   border: 1px solid black;
 }
 
