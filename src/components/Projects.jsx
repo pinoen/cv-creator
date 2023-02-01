@@ -1,4 +1,7 @@
 import React from 'react'
+import { IconButton } from '@mui/material'
+import EditIcon from '@mui/icons-material/Edit';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 const Projects = () => {
   const handleMouseOver = () => {
@@ -12,9 +15,17 @@ const Projects = () => {
     <div className='projects-container'
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
-    >Projects
+    >
+      <IconButton aria-label="edit" color="secondary">
+        <EditIcon on className='edit-projects' />
+      </IconButton>
 
-      <button className='edit-projects'>Edit</button>
+      <p className='section-title'>PROJECTS</p>
+      <hr></hr>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://frontend-final-dentist-cards.netlify.app/home'>DH Odonto - Frontend Final</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github-cards-f41c2c.netlify.app/'>GitHub Users' Cards - Frontend</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/proyecto-integrador'>Clinica Odontologica - Backend</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/hotel'>Hotel - Java - Oracle</a></div>
 
     </div>
   )

@@ -43,7 +43,7 @@ const Skills = () => {
       </div>
       <h4>Tools</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>Visual Studio Code</span><span>IntelliJDEA</span><span>Postman</span><span>Figma</span><span>Workbench</span><span>UML</span><span>Trello</span>
+        <span>Visual Studio Code</span><span>IntelliJDEA</span><span>Postman</span><span>Figma</span><span>Workbench</span><span>UML</span><span>Trello</span><span>Netlify</span>
       </div>
 
       <h4>Soft-skills</h4>
