@@ -25,7 +25,7 @@ const Education = () => {
 
       <p className='section-title'>EDUCATION</p>
       <hr></hr>
-      <h2>Certified Tech Developer</h2>
+      <h3>Certified Tech Developer</h3>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '15px' }} >
         <h4>Digital House</h4>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
@@ -34,7 +34,7 @@ const Education = () => {
         </div>
       </div>
 
-      <h2>Degree in Health and Safety at Work</h2>
+      <h3>Degree in Health and Safety at Work</h3>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between' }} >
         <h4>Universidad del Aconcagua</h4>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
