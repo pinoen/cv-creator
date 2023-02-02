@@ -18,9 +18,16 @@ const style = {
   paddingTop: '10px',
 };
 
-export default function EditHeader({ open, handleClose, fullName, jobTitle, profilePicture, mobile, email, city, github, linkedin }) {
+const fullName = document.querySelector('#full-name').textContent;
+const jobTitle = document.querySelector('#job-title').textContent;
+const profilePicture = document.querySelector('#profile-img').src;
+const mobile = document.querySelector('#mobile').textContent;
+const email = document.querySelector('#email').textContent;
+const city = document.querySelector('#city').textContent;
+const github = document.querySelector('#github').textContent;
+const linkedin = document.querySelector('#linkedin').textContent;
 
-
+export default function EditHeader({ open, handleClose }) {
 
   const dataHeader = useFormik({
     initialValues: {
@@ -34,15 +41,15 @@ export default function EditHeader({ open, handleClose, fullName, jobTitle, prof
       linkedin: linkedin
     },
     onSubmit: (data) => {
-      fullName.innerHTML = data.fullName;
-      jobTitle = data.jobTitle;
-      profilePicture = data.profilePicture;
-      mobile = data.mobile;
-      email = data.email;
-      city = data.city;
-      github = data.github;
-      linkedin = data.linkedin;
-      console.log(data.fullName)
+      document.querySelector('#full-name').textContent = data.fullName;
+      document.querySelector('#job-title').textContent = data.jobTitle;
+      document.querySelector('#profile-img').src = data.profilePicture;
+      document.querySelector('#mobile').textContent = data.mobile;
+      document.querySelector('#email').textContent = data.email;
+      document.querySelector('#city').textContent = data.city;
+      document.querySelector('#github').textContent = data.github;
+      document.querySelector('#linkedin').textContent = data.linkedin;
+      handleClose()
     }
   })
 
@@ -64,7 +71,7 @@ export default function EditHeader({ open, handleClose, fullName, jobTitle, prof
 
             <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder={mobile} fullWidth />
             <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={email} fullWidth />
-            <TextField id="outlined-basic" label='City' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={city} fullWidth />
+            <TextField id="outlined-basic" label='City' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder={city} fullWidth />
             <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder={github} fullWidth />
             <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder={linkedin} fullWidth />
 

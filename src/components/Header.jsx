@@ -8,14 +8,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { IconButton } from '@mui/material';
 import EditHeader from './modals/EditHeader';
 
-const fullName = document.querySelector('#full-name').textContent;
-const jobTitle = document.querySelector('#job-title').textContent;
-const profilePicture = document.querySelector('#profile-img').src;
-const mobile = document.querySelector('#mobile').textContent;
-const email = document.querySelector('#email').textContent;
-const city = document.querySelector('#city').textContent;
-const github = document.querySelector('#github').textContent;
-const linkedin = document.querySelector('#linkedin').textContent;
+
 
 const Header = () => {
 
@@ -62,14 +55,7 @@ const Header = () => {
       <EditHeader
         open={open}
         handleClose={handleClose}
-        fullName={fullName}
-        jobTitle={jobTitle}
-        profilePicture={profilePicture}
-        mobile={mobile}
-        email={email}
-        city={city}
-        github={github}
-        linkedin={linkedin}
+
       />
 
 
