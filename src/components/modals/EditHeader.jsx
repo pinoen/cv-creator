@@ -18,14 +18,14 @@ const style = {
   paddingTop: '10px',
 };
 
-const fullName = document.querySelector('#full-name').textContent;
-const jobTitle = document.querySelector('#job-title').textContent;
-const profilePicture = document.querySelector('#profile-img').src;
-const mobile = document.querySelector('#mobile').textContent;
-const email = document.querySelector('#email').textContent;
-const city = document.querySelector('#city').textContent;
-const github = document.querySelector('#github').textContent;
-const linkedin = document.querySelector('#linkedin').textContent;
+const fullName = document.querySelector('#full-name');
+const jobTitle = document.querySelector('#job-title');
+const profilePicture = document.querySelector('#profile-img');
+const mobile = document.querySelector('#mobile');
+const email = document.querySelector('#email');
+const city = document.querySelector('#city');
+const github = document.querySelector('#github');
+const linkedin = document.querySelector('#linkedin');
 
 export default function EditHeader({ open, handleClose }) {
 
@@ -41,14 +41,14 @@ export default function EditHeader({ open, handleClose }) {
       linkedin: linkedin
     },
     onSubmit: (data) => {
-      document.querySelector('#full-name').textContent = data.fullName;
-      document.querySelector('#job-title').textContent = data.jobTitle;
-      document.querySelector('#profile-img').src = data.profilePicture;
-      document.querySelector('#mobile').textContent = data.mobile;
-      document.querySelector('#email').textContent = data.email;
-      document.querySelector('#city').textContent = data.city;
-      document.querySelector('#github').textContent = data.github;
-      document.querySelector('#linkedin').textContent = data.linkedin;
+      fullName.textContent = data.fullName
+      jobTitle.textContent = data.jobTitle;
+      profilePicture.src = data.profilePicture;
+      mobile.textContent = data.mobile;
+      email.textContent = data.email;
+      city.textContent = data.city;
+      github.textContent = data.github;
+      linkedin.textContent = data.linkedin;
       handleClose()
     }
   })
@@ -65,15 +65,15 @@ export default function EditHeader({ open, handleClose }) {
           <form className='formContainer' onSubmit={dataHeader.handleSubmit} >
             <Typography variant='h4' color='primary' >Editar Header</Typography>
 
-            <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder={fullName} fullWidth />
-            <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder={jobTitle} fullWidth />
-            <TextField id="outlined-basic" label='Profile picture url' variant="outlined" name='profilePicture' onChange={dataHeader.handleChange} placeholder={profilePicture} fullWidth />
+            <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder={fullName.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder={jobTitle.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Profile picture url' variant="outlined" name='profilePicture' onChange={dataHeader.handleChange} placeholder={profilePicture.src} fullWidth />
 
-            <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder={mobile} fullWidth />
-            <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={email} fullWidth />
-            <TextField id="outlined-basic" label='City' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder={city} fullWidth />
-            <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder={github} fullWidth />
-            <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder={linkedin} fullWidth />
+            <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder={mobile.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={email.textContent} fullWidth />
+            <TextField id="outlined-basic" label='City' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder={city.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder={github.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder={linkedin.textContent} fullWidth />
 
             <Button type='submit' variant='contained' color='primary'>Actualizar</Button>
           </form>
