@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -6,8 +6,23 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EditIcon from '@mui/icons-material/Edit';
 import { IconButton } from '@mui/material';
+import EditHeader from './modals/EditHeader';
+
+const fullName = document.querySelector('#full-name').textContent;
+const jobTitle = document.querySelector('#job-title').textContent;
+const profilePicture = document.querySelector('#profile-img').src;
+const mobile = document.querySelector('#mobile').textContent;
+const email = document.querySelector('#email').textContent;
+const city = document.querySelector('#city').textContent;
+const github = document.querySelector('#github').textContent;
+const linkedin = document.querySelector('#linkedin').textContent;
 
 const Header = () => {
+
+
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleMouseOver = () => {
     document.querySelector('.edit-header').style.display = 'flex'
@@ -21,28 +36,41 @@ const Header = () => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}>
 
-      <IconButton aria-label="edit" color="secondary">
+      <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-header' />
       </IconButton>
+
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
         <div>
-          <h1>EMILIO NICOLAS PINO</h1>
-          <h3>Full Stack Developer</h3>
+          <h1 id='full-name'>EMILIO NICOLAS PINO</h1>
+          <h3 id='job-title'>Full Stack Developer</h3>
         </div>
         <img id='profile-img' src='https://avatars.githubusercontent.com/u/91059020?v=4' alt='profile'></img>
 
       </div>
 
       <div className='contact-data'>
-        <PhoneAndroidIcon color='action' /><p>+54 9 299 4184677</p>
-        <EmailIcon color='action' /><a href='mailto:pinoen@yahoo.com.ar'>pinoen@yahoo.com.ar</a>
-        <LocationOnIcon color='action' /><p>Mendoza, Argentina</p>
-        <GitHubIcon color='action' /><a href='https://github.com/pinoen' target={'_blank'} rel="noreferrer">github.com/pinoen</a>
-        <LinkedInIcon color='action' /><a href='https://www.linkedin.com/in/emiliopino/' target={'_blank'} rel="noreferrer">linkedin.com/in/emiliopino</a>
+        <PhoneAndroidIcon color='action' /><p id='mobile'>+54 9 299 4184677</p>
+        <EmailIcon color='action' /><a id='email' href='mailto:pinoen@yahoo.com.ar'>pinoen@yahoo.com.ar</a>
+        <LocationOnIcon color='action' /><p id='city'>Mendoza, Argentina</p>
+        <GitHubIcon color='action' /><a id='github' href='https://github.com/pinoen' target={'_blank'} rel="noreferrer">github.com/pinoen</a>
+        <LinkedInIcon color='action' /><a id='linkedin' href='https://www.linkedin.com/in/emiliopino/' target={'_blank'} rel="noreferrer">linkedin.com/in/emiliopino</a>
       </div>
 
+      <EditHeader
+        open={open}
+        handleClose={handleClose}
+        fullName={fullName}
+        jobTitle={jobTitle}
+        profilePicture={profilePicture}
+        mobile={mobile}
+        email={email}
+        city={city}
+        github={github}
+        linkedin={linkedin}
+      />
 
 
     </div>
