@@ -22,36 +22,36 @@ const Skills = () => {
 
       <p className='section-title'>SKILLS</p>
       <hr></hr>
-      <h4>Client-side</h4>
+      <h4 style={{ paddingTop: '2px' }}>Client-side</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>HTML</span><span>CSS</span><span>Sass</span><span>Bootstrap</span><span>React</span>
       </div>
 
-      <h4>Server-side</h4>
+      <h4 style={{ paddingTop: '2px' }}>Server-side</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>MySQL</span><span>MongoDB</span><span>Node.js</span><span>Java</span><span>SpringBoot</span><span>Hibernate</span>
       </div>
 
-      <h4>Testing</h4>
+      <h4 style={{ paddingTop: '2px' }}>Testing</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>Jest</span><span>JUnit</span><span>Selenium</span><span>Log4J</span>
       </div>
 
-      <h4>DevOps</h4>
+      <h4 style={{ paddingTop: '2px' }}>DevOps</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>CLI Linux</span><span>Bash</span><span>VirtualBox</span><span>Git</span><span>GitHub</span><span>Docker</span><span>Cloud Computing</span>
       </div>
-      <h4>Tools</h4>
+      <h4 style={{ paddingTop: '2px' }}>Tools</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>Visual Studio Code</span><span>IntelliJDEA</span><span>Postman</span><span>Figma</span><span>Workbench</span><span>UML</span><span>Trello</span><span>Netlify</span>
       </div>
 
-      <h4>Soft-skills</h4>
+      <h4 style={{ paddingTop: '2px' }}>Soft-skills</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>Agile methodologies</span><span>Design Thinking</span><span>UX/UI</span><span>Effective Communication</span><span>Teamwork & Collaboration</span>
       </div>
 
-      <h4>Languages</h4>
+      <h4 style={{ paddingTop: '2px' }}>Languages</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
         <span>Spanish (native)</span><span>English (full professional proficiency)</span>
       </div>

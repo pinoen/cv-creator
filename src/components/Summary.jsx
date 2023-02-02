@@ -22,7 +22,8 @@ const Summary = () => {
       </IconButton>
       <p>SUMMARY</p>
       <hr></hr>
-      <p>I worked for 15 years in the building, oil, and gas industries as a safety supervisor with the primary goal of keeping a safe work environment. In 2021, I decided to pursue a career in technology. Currently, I am looking for <em>the company</em> where I can apply all that I have learned so far and keep growing together.</p>
+      <p>I worked for 15 years in the building, oil, and gas industries as a safety supervisor with the primary goal of keeping a safe workplace. In 2021, I decided to pursue a career in technology. Currently, I am looking for <em>the company</em> where I can apply all that I have learned so far and keep growing together.</p>
+      <p>I consider myself a long-term student, a fast learner, goal-oriented, quickly adaptable in changing environments, responsible, and friendly.</p>
 
     </div>
   )

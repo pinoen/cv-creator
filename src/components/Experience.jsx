@@ -23,57 +23,57 @@ const Experience = () => {
 
       <p className='section-title'>EXPERIENCE</p>
       <hr></hr>
-      <h3>HSE Technical Professional</h3>
+      <h4 className='experience-title'>HSE Technical Professional</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>Halliburton</h4>
+        <a href='https://www.halliburton.com/' target={'_blank'} rel="noreferrer">Halliburton</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>10/2019 - 10/2020</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Neuquen, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>10/2019 - 10/2020</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Argentina</p>
         </div>
       </div>
 
-      <h3>HSE & Security Coordinator</h3>
+      <h4 className='experience-title'>HSE & Security Coordinator</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>TechnipFMC</h4>
+        <a href="https://www.technipfmc.com/" target="_blank" rel="noreferrer">TechnipFMC</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>07/2017 - 10/2019</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Neuquen, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>07/2017 - 10/2019</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Argentina</p>
         </div>
       </div>
 
-      <h3>Safety Coordinator</h3>
+      <h4 className='experience-title'>Safety Coordinator</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>Tecna</h4>
+        <a href="https://tecna.business.site/" target="_blank" rel="noreferrer">Tecna</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>10/2013 - 07/2017</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Tierra del Fuego, BsAs, Neuquen, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>10/2013 - 07/2017</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>Tierra del Fuego, BsAs, Neuquen, Argentina</p>
         </div>
       </div>
 
-      <h3>Safety Coordinator</h3>
+      <h4 className='experience-title'>Safety Coordinator</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>Andrade Gutierrez</h4>
+        <a href="https://www.andradegutierrez.com.br/" target="_blank" rel="noreferrer">Andrade Gutierrez</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>05/2011 - 03/2012</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>BsAs, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>05/2011 - 03/2012</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>BsAs, Argentina</p>
         </div>
       </div>
 
-      <h3>QHSE Analyst</h3>
+      <h4 className='experience-title'>QHSE Analyst</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>Champion Tech</h4>
+        <a href="https://www.championx.com/" target="_blank" rel="noreferrer">Champion Technologies</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>01/2008 - 02/2011</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Neuquen, Chubut, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>01/2008 - 02/2011</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Chubut, Argentina</p>
         </div>
       </div>
 
-      <h3>Safety Supervisor</h3>
+      <h4 className='experience-title'>Safety Supervisor</h4>
       <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <h4>Skanska</h4>
+        <a href="https://www.skanska.com/" target="_blank" rel="noreferrer">Skanska</a>
         <div style={{ display: 'flex', alignItems: 'center', fontSize: 'small' }} >
-          <EventIcon fontSize='small' color='action' /><p>10/2005 - 05/2007</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Neuquen, Rio Negro, La Pampa, Argentina</p>
+          <EventIcon fontSize='smaller' color='action' /><p>10/2005 - 05/2007</p>
+          <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Rio Negro, La Pampa, Argentina</p>
         </div>
       </div>
 

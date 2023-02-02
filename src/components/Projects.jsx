@@ -22,10 +22,12 @@ const Projects = () => {
 
       <p className='section-title'>PROJECTS</p>
       <hr></hr>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://frontend-final-dentist-cards.netlify.app/home'>DH Odonto - Frontend Final</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github-cards-f41c2c.netlify.app/'>GitHub Users' Cards - Frontend</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/proyecto-integrador'>Clinica Odontologica - Backend</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/hotel'>Hotel - Java - Oracle</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://frontend-final-dentist-cards.netlify.app/home'>DH Odonto - Frontend Final</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github-cards-f41c2c.netlify.app/'>GitHub Users' Cards - Frontend</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/proyecto-integrador'>Clinica Odontologica - Backend</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/hotel'>Hotel - Java - Oracle</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://pinoen.github.io/ToDo-App-pinoen/'>TO DO App - Frontend</a></div>
+      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://pinoen.github.io/weather/'>Weather App - The Odin Project</a></div>
 
     </div>
   )

@@ -7,9 +7,14 @@
   font-weight: 300;
   text-decoration: none;
 }
+a:hover{
+  transform: scale(0.95);
+}
 
 
 .App {
+  position: relative;
+  right: 0;
   margin: 5px;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -86,6 +91,15 @@ h4 {
 
 .header-container h3 {
   color: rgb(122,217,228);
+}
+
+.experience-title{
+  color: rgb(52,51,52);
+}
+
+.experience-container a, .education-container a {
+  color: rgb(122,217,228);
+  font-size: medium;
 }
 
 p, a{
