@@ -15,7 +15,6 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
-  paddingTop: '10px',
 };
 
 const fullName = document.querySelector('#full-name');
@@ -63,7 +62,7 @@ export default function EditHeader({ open, handleClose }) {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataHeader.handleSubmit} >
-            <Typography variant='h4' color='primary' >Editar Header</Typography>
+            <Typography variant='h4' color='primary' >Edit Header</Typography>
 
             <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder={fullName.textContent} fullWidth />
             <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder={jobTitle.textContent} fullWidth />
@@ -75,7 +74,7 @@ export default function EditHeader({ open, handleClose }) {
             <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder={github.textContent} fullWidth />
             <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder={linkedin.textContent} fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>Actualizar</Button>
+            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
           </form>
         </Box>
       </Modal>
