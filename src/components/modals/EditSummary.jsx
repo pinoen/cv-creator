@@ -18,8 +18,6 @@ const style = {
 const summary = document.querySelector('#summary')
 
 const EditSummary = ({ open, handleClose }) => {
-
-
   const dataSummary = useFormik({
     initialValues: {
       summary: summary
@@ -38,7 +36,6 @@ const EditSummary = ({ open, handleClose }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataSummary.handleSubmit}>
             <Typography variant='h4' color={'primary'}>Edit Summary</Typography>
@@ -55,7 +52,6 @@ const EditSummary = ({ open, handleClose }) => {
             />
             <Button type='submit' variant='contained' color='primary'>SAVE</Button>
           </form>
-
         </Box>
       </Modal>
     </div>

@@ -27,7 +27,6 @@ const github = document.querySelector('#github');
 const linkedin = document.querySelector('#linkedin');
 
 export default function EditHeader({ open, handleClose }) {
-
   const dataHeader = useFormik({
     initialValues: {
       fullName: fullName,
@@ -67,7 +66,6 @@ export default function EditHeader({ open, handleClose }) {
             <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder={fullName.textContent} fullWidth />
             <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder={jobTitle.textContent} fullWidth />
             <TextField id="outlined-basic" label='Profile picture url' variant="outlined" name='profilePicture' onChange={dataHeader.handleChange} placeholder={profilePicture.src} fullWidth />
-
             <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder={mobile.textContent} fullWidth />
             <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={email.textContent} fullWidth />
             <TextField id="outlined-basic" label='City' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder={city.textContent} fullWidth />
