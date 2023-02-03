@@ -15,18 +15,18 @@ const style = {
   p: 4,
 };
 
-const summary = document.querySelector('#summary')
+// const summary = document.querySelector('#summary')
 
 const EditSummary = ({ open, handleClose }) => {
-  const dataSummary = useFormik({
-    initialValues: {
-      summary: summary
-    },
-    onSubmit: (data) => {
-      summary.textContent = data.summary
-      handleClose()
-    }
-  })
+  // const dataSummary = useFormik({
+  //   initialValues: {
+  //     summary: summary.textContent
+  //   },
+  //   onSubmit: (data) => {
+  //     summary.textContent = data.summary
+  //     handleClose()
+  //   }
+  // })
 
   return (
     <div>
@@ -37,7 +37,7 @@ const EditSummary = ({ open, handleClose }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <form className='formContainer' onSubmit={dataSummary.handleSubmit}>
+          {/* <form className='formContainer' onSubmit={dataSummary.handleSubmit}>
             <Typography variant='h4' color={'primary'}>Edit Summary</Typography>
 
             <TextField
@@ -51,7 +51,7 @@ const EditSummary = ({ open, handleClose }) => {
               fullWidth
             />
             <Button type='submit' variant='contained' color='primary'>SAVE</Button>
-          </form>
+          </form> */}
         </Box>
       </Modal>
     </div>

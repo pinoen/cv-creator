@@ -135,3 +135,17 @@ span{
   align-items: center;
   height: 600px;
 }
+
+.education-style{
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.education-style-icons{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+}
