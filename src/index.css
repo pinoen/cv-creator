@@ -149,3 +149,12 @@ span{
   gap: 5px;
   font-size: small;
 }
+
+.task-style {
+  display: flex;
+  gap: 2px;
+  align-content: center;
+}
+
+
+/* style={{ display: 'flex', gap: '2px', alignContent: 'center' }} */
