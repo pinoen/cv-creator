@@ -136,14 +136,14 @@ span{
   height: 600px;
 }
 
-.education-style{
+.education-style, .experience-style{
   display: flex;
   gap: 5px;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.education-style-icons{
+.education-style-icons, .experience-style-icons{
   display: flex;
   align-items: center;
   gap: 5px;

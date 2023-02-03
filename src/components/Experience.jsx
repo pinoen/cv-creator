@@ -2,9 +2,14 @@ import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import React from 'react'
+import React, { useState } from 'react'
+import AddExperience from './modals/AddExperience';
 
 const Experience = () => {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const handleMouseOver = () => {
     document.querySelector('.edit-experience').style.display = 'flex'
   }
@@ -17,7 +22,7 @@ const Experience = () => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <IconButton aria-label="edit" color="secondary">
+      <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-experience' />
       </IconButton>
 
@@ -60,22 +65,15 @@ const Experience = () => {
       </div>
 
       <h4 className='experience-title'>QHSE Analyst</h4>
-      <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
+      <div className='experience-style' >
         <a href="https://www.championx.com/" target="_blank" rel="noreferrer">Champion Technologies</a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'small' }} >
+        <div className='experience-style-icons' >
           <EventIcon fontSize='smaller' color='action' /><p>01/2008 - 02/2011</p>
           <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Chubut, Argentina</p>
         </div>
       </div>
 
-      <h4 className='experience-title'>Safety Supervisor</h4>
-      <div style={{ display: 'flex', gap: '5px', justifyContent: 'space-between', marginBottom: '5px' }} >
-        <a href="https://www.skanska.com/" target="_blank" rel="noreferrer">Skanska</a>
-        <div style={{ display: 'flex', alignItems: 'center', fontSize: 'small' }} >
-          <EventIcon fontSize='smaller' color='action' /><p>10/2005 - 05/2007</p>
-          <LocationOnIcon fontSize='smaller' color='action' /><p>Neuquen, Rio Negro, La Pampa, Argentina</p>
-        </div>
-      </div>
+      <AddExperience open={open} handleClose={handleClose} />
 
     </div>
   )

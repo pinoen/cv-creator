@@ -1,6 +1,4 @@
 import React from 'react'
-import EventIcon from '@mui/icons-material/Event';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Button, Modal, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';

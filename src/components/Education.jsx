@@ -3,8 +3,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AddEducation from './modals/AddEducation';
-
-
 import React, { useState } from 'react'
 
 const Education = () => {
