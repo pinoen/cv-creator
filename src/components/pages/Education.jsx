@@ -32,6 +32,7 @@ const Education = () => {
       <hr></hr>
       {education.map(item => (
         <EducationItem
+          key={item.career}
           career={item.career}
           institution={item.institution}
           web={item.web}
