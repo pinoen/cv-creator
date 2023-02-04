@@ -6,13 +6,16 @@ import Tasks from "./components/Tasks";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Courses from "./components/Courses";
+import EducationContextProvider from "./components/context/EducationContext";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Summary />
-      <Education />
+      <EducationContextProvider>
+        <Education />
+      </EducationContextProvider>
       <Experience />
       <Tasks />
       <Skills />

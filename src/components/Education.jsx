@@ -1,14 +1,17 @@
 import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
-import EventIcon from '@mui/icons-material/Event';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AddEducation from './modals/AddEducation';
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { EducationContext } from './context/EducationContext';
+import EducationItem from './commons/EducationItem';
+
 
 const Education = () => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const { education } = useContext(EducationContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-education').style.display = 'flex'
@@ -27,14 +30,17 @@ const Education = () => {
 
       <p className='section-title'>EDUCATION</p>
       <hr></hr>
-      <h3>Certified Tech Developer</h3>
-      <div className='education-style'>
-        <a href='https://www.digitalhouse.com/ar' target={'_blank'} rel="noreferrer">Digital House</a>
-        <div className='education-style-icons' >
-          <EventIcon fontSize='small' color='action' /><p>05/2022 - Ongoing</p>
-          <LocationOnIcon fontSize='small' color='action' /><p>Online, Argentina</p>
-        </div>
-      </div>
+      {education.map(item => (
+        <EducationItem
+          career={item.career}
+          institution={item.institution}
+          web={item.web}
+          from={item.from}
+          until={item.until}
+          place={item.place}
+        />
+      ))}
+
 
       <AddEducation open={open} handleClose={handleClose} />
     </div>
