@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Modal, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
+import { TaskContext } from '../context/TaskContext';
 
 const style = {
   position: 'absolute',
@@ -15,19 +16,21 @@ const style = {
   p: 4,
 };
 
-
 const AddTask = ({ open, handleClose }) => {
-  const taskContainer = document.querySelector('.tasks-container')
+
+  const { setTask } = useContext(TaskContext)
 
   const dataTask = useFormik({
     initialValues: {
       task: '',
     },
     onSubmit: (data) => {
-      const item = `
-      <div class='task-style'><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmaller css-821wyw-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DoneIcon"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path></svg><p>${data.task}</p></div>
-      `
-      taskContainer.innerHTML += item
+      const item = data.task
+
+      setTask(preItems => {
+        return [...preItems, item]
+      })
+
       handleClose()
     }
   })
