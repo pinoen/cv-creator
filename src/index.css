@@ -11,11 +11,17 @@ a:hover{
   transform: scale(0.95);
 }
 
+body{
+  background-image: url('../src/images/workEnvironment.jpg');
+  background-size: cover;
+}
+
 
 .App {
+  background-color: white;
   position: relative;
   right: 0;
-  margin: 5px;
+  margin: 30px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(6, 1fr);
