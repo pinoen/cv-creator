@@ -162,5 +162,13 @@ span{
   align-content: center;
 }
 
+.skill-section-title{
+  padding-top: 2px;
+}
 
-/* style={{ display: 'flex', gap: '2px', alignContent: 'center' }} */
+.skill-section-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 10px;
+}

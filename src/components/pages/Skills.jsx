@@ -1,12 +1,20 @@
 import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import AddSkill from '../modals/AddSkill';
+import { SkillContext } from '../context/SkillContext';
+import SkillsItems from '../commons/SkillsItems'
 
 const Skills = () => {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const { skills } = useContext(SkillContext)
+
   const handleMouseOver = () => {
     document.querySelector('.edit-skills').style.display = 'flex'
   }
-
   const handleMouseOut = () => {
     document.querySelector('.edit-skills').style.display = 'none'
   }
@@ -15,46 +23,26 @@ const Skills = () => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-
-      <IconButton aria-label="edit" color="secondary">
+      <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-skills' />
       </IconButton>
 
       <p className='section-title'>SKILLS</p>
       <hr></hr>
-      <h4 style={{ paddingTop: '2px' }}>Client-side</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>HTML</span><span>CSS</span><span>Sass</span><span>Bootstrap</span><span>React</span>
-      </div>
+      {skills.map((skill, index) => (
+        <SkillsItems
+          key={index}
+          client={skill.client}
+          server={skill.server}
+          testing={skill.testing}
+          devops={skill.devops}
+          tools={skill.tools}
+          soft={skill.soft}
+          languages={skill.languages}
+        />
+      ))}
 
-      <h4 style={{ paddingTop: '2px' }}>Server-side</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>MySQL</span><span>MongoDB</span><span>Node.js</span><span>Java</span><span>SpringBoot</span><span>Hibernate</span>
-      </div>
-
-      <h4 style={{ paddingTop: '2px' }}>Testing</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>Jest</span><span>JUnit</span><span>Selenium</span><span>Log4J</span>
-      </div>
-
-      <h4 style={{ paddingTop: '2px' }}>DevOps</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>CLI Linux</span><span>Bash</span><span>VirtualBox</span><span>Git</span><span>GitHub</span><span>Docker</span><span>Cloud Computing</span>
-      </div>
-      <h4 style={{ paddingTop: '2px' }}>Tools</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>Visual Studio Code</span><span>IntelliJDEA</span><span>Postman</span><span>Figma</span><span>Workbench</span><span>UML</span><span>Trello</span><span>Netlify</span>
-      </div>
-
-      <h4 style={{ paddingTop: '2px' }}>Soft-skills</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>Agile methodologies</span><span>Design Thinking</span><span>UX/UI</span><span>Effective Communication</span><span>Teamwork & Collaboration</span>
-      </div>
-
-      <h4 style={{ paddingTop: '2px' }}>Languages</h4>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', paddingBottom: '10px' }}>
-        <span>Spanish (native)</span><span>English (full professional proficiency)</span>
-      </div>
+      <AddSkill open={open} handleClose={handleClose} />
     </div>
   )
 }
