@@ -7,16 +7,21 @@ import Skills from "./components/pages/Skills";
 import Projects from "./components/pages/Projects";
 import Courses from "./components/pages/Courses";
 import EducationContextProvider from "./components/context/EducationContext";
+import ExperienceContextProvider from "./components/context/ExperienceContext";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Summary />
+
       <EducationContextProvider>
         <Education />
       </EducationContextProvider>
-      <Experience />
+
+      <ExperienceContextProvider>
+        <Experience />
+      </ExperienceContextProvider>
       <Tasks />
       <Skills />
       <Projects />

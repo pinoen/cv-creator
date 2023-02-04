@@ -42,7 +42,6 @@ const Education = () => {
         />
       ))}
 
-
       <AddEducation open={open} handleClose={handleClose} />
     </div>
   )
