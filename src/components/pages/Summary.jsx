@@ -1,7 +1,7 @@
 import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
 import React, { useState } from 'react'
-import EditSummary from './modals/EditSummary';
+import EditSummary from '../modals/EditSummary';
 
 const Summary = () => {
   const [open, setOpen] = useState(false)

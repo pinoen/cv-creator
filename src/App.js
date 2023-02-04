@@ -1,11 +1,11 @@
-import Header from "./components/Header";
-import Summary from "./components/Summary";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
-import Tasks from "./components/Tasks";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Courses from "./components/Courses";
+import Header from "./components/pages/Header";
+import Summary from "./components/pages/Summary";
+import Education from "./components/pages/Education";
+import Experience from "./components/pages/Experience";
+import Tasks from "./components/pages/Tasks";
+import Skills from "./components/pages/Skills";
+import Projects from "./components/pages/Projects";
+import Courses from "./components/pages/Courses";
 import EducationContextProvider from "./components/context/EducationContext";
 
 function App() {

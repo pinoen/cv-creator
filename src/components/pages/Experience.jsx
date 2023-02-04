@@ -3,7 +3,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import React, { useState } from 'react'
-import AddExperience from './modals/AddExperience';
+import AddExperience from '../modals/AddExperience';
 
 const Experience = () => {
   const [open, setOpen] = useState(false)

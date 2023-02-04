@@ -2,7 +2,7 @@ import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
 import React, { useState } from 'react'
-import AddTask from './modals/addTask';
+import AddTask from '../modals/addTask';
 
 
 const Tasks = () => {

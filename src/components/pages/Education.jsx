@@ -1,9 +1,9 @@
 import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
-import AddEducation from './modals/AddEducation';
+import AddEducation from '../modals/AddEducation';
 import React, { useState, useContext } from 'react'
-import { EducationContext } from './context/EducationContext';
-import EducationItem from './commons/EducationItem';
+import { EducationContext } from '../context/EducationContext';
+import EducationItem from '../commons/EducationItem';
 
 
 const Education = () => {

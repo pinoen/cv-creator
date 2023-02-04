@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EditIcon from '@mui/icons-material/Edit';
 import { IconButton } from '@mui/material';
-import EditHeader from './modals/EditHeader';
+import EditHeader from '../modals/EditHeader';
 
 const Header = () => {
   const [open, setOpen] = useState(false)
