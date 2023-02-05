@@ -173,10 +173,9 @@ span{
   padding-bottom: 10px;
 }
 
-.project-box{
+.project-box, .course-box{
   display: flex;
   gap: 2px;
   align-content: center;
   padding-bottom: 2px;
 }
-

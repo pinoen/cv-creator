@@ -11,6 +11,7 @@ import ExperienceContextProvider from "./components/context/ExperienceContext";
 import TaskContextProvider from "./components/context/TaskContext";
 import SkillContextProvider from "./components/context/SkillContext";
 import ProjectsContextProvider from "./components/context/ProjectsContext";
+import CoursesContextProvider from "./components/context/CoursesContext";
 
 function App() {
   return (
@@ -37,7 +38,10 @@ function App() {
       <ProjectsContextProvider>
         <Projects />
       </ProjectsContextProvider>
-      <Courses />
+
+      <CoursesContextProvider>
+        <Courses />
+      </CoursesContextProvider>
     </div>
   );
 }
