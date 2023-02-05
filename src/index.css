@@ -24,7 +24,7 @@ body{
   margin: 30px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr) 1.3fr;
   color: blueviolet;
   width: 210mm;
   height: 297mm;
