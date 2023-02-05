@@ -41,8 +41,8 @@ const AddSkill = ({ open, handleClose }) => {
         languages: data.languages
       }
 
-      setSkills(preItems => {
-        return [...preItems, item]
+      setSkills(() => {
+        return [item]
       })
 
       handleClose()
