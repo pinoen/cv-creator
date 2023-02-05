@@ -10,3 +10,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `3 - When you've completed all section, press CTL + P to print out your CV as a pdf document.`
 
+
+You can try it out at [Netfily](https://cv-creator-pinoen.netlify.app/).
