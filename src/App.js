@@ -14,6 +14,15 @@ import ProjectsContextProvider from "./components/context/ProjectsContext";
 import CoursesContextProvider from "./components/context/CoursesContext";
 import HeaderContextProvider from "./components/context/HeaderContext";
 import SummaryContextProvider from "./components/context/SummaryContext";
+import Swal from 'sweetalert2'
+
+window.addEventListener('load', () => {
+  Swal.fire(
+    'Instructions',
+    'Hover over the section you want to complete and click the pencil. After complete a form click the SAVE button. When you have completed all sections, press CTL + P to print out your CV as a pdf document.',
+    'info'
+  )
+})
 
 function App() {
   return (
