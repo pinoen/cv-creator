@@ -1,7 +1,8 @@
 import { Button, Modal, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useFormik } from 'formik';
+import { SummaryContext } from '../context/SummaryContext'
 
 const style = {
   position: 'absolute',
@@ -16,15 +17,16 @@ const style = {
 };
 
 const EditSummary = ({ open, handleClose }) => {
+
+  const { setSummary } = useContext(SummaryContext)
+
   const dataSummary = useFormik({
     initialValues: {
-      summary: ''
+      summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     },
     onSubmit: (data) => {
-      const dataSummary = {
-        summary: data.summary
-      }
-      console.log(dataSummary)
+      setSummary(data.summary)
+
       handleClose()
     }
   })
@@ -46,7 +48,7 @@ const EditSummary = ({ open, handleClose }) => {
               label="SUMMARY"
               multiline
               rows={8}
-              defaultValue='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
+              placeholder='Write down your summary'
               name='summary'
               onChange={dataSummary.handleChange}
               fullWidth

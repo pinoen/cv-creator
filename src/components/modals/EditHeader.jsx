@@ -43,8 +43,6 @@ const EditHeader = ({ open, handleClose }) => {
         linkedin: data.linkedin
       }
 
-      console.log(data)
-
       setUser(() => {
         return [dataUser]
       })

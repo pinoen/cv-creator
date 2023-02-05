@@ -13,6 +13,7 @@ import SkillContextProvider from "./components/context/SkillContext";
 import ProjectsContextProvider from "./components/context/ProjectsContext";
 import CoursesContextProvider from "./components/context/CoursesContext";
 import HeaderContextProvider from "./components/context/HeaderContext";
+import SummaryContextProvider from "./components/context/SummaryContext";
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
       <HeaderContextProvider>
         <Header />
       </HeaderContextProvider>
-      <Summary />
+
+      <SummaryContextProvider>
+        <Summary />
+      </SummaryContextProvider>
 
       <EducationContextProvider>
         <Education />
