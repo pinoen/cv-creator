@@ -20,8 +20,8 @@ const HeaderItem = ({ fullName, jobTitle, profilePicture, mobile, email, city, g
         <PhoneAndroidIcon color='action' /><p id='mobile'>{mobile}</p>
         <EmailIcon color='action' /><a href='mailto:' id='email'>{email}</a>
         <LocationOnIcon color='action' /><p id='city'>{city}</p>
-        <GitHubIcon color='action' /><a id='github' href={github} target={'_blank'} rel="noreferrer">{github}</a>
-        <LinkedInIcon color='action' /><a id='linkedin' href={linkedin} target={'_blank'} rel="noreferrer">{linkedin}</a>
+        <GitHubIcon color='action' /><a id='github' href={github} target={'_blank'} rel="noreferrer">{github.split('://')[1]}</a>
+        <LinkedInIcon color='action' /><a id='linkedin' href={linkedin} target={'_blank'} rel="noreferrer">{linkedin.split('//www.')[1]}</a>
       </div>
     </>
   )
