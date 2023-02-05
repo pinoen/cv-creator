@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { IconButton } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
-import LaunchIcon from '@mui/icons-material/Launch';
+import AddProject from '../modals/AddProject';
+import ProjectItem from '../commons/ProjectItem';
+import { ProjectsContext } from '../context/ProjectsContext';
 
 const Projects = () => {
+  const [open, setOpen] = useState([])
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  const { projects } = useContext(ProjectsContext)
+
   const handleMouseOver = () => {
     document.querySelector('.edit-projects').style.display = 'flex'
   }
-
   const handleMouseOut = () => {
     document.querySelector('.edit-projects').style.display = 'none'
   }
@@ -16,19 +23,21 @@ const Projects = () => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <IconButton aria-label="edit" color="secondary">
+      <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-projects' />
       </IconButton>
 
       <p className='section-title'>PROJECTS</p>
       <hr></hr>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://frontend-final-dentist-cards.netlify.app/home'>DH Odonto - Frontend Final</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github-cards-f41c2c.netlify.app/'>GitHub Users' Cards - Frontend</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/proyecto-integrador'>Clinica Odontologica - Backend</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://github.com/pinoen/hotel'>Hotel - Java - Oracle</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://pinoen.github.io/ToDo-App-pinoen/'>TO DO App - Frontend</a></div>
-      <div style={{ display: 'flex', gap: '2px', alignContent: 'center', paddingBottom: '2px' }}><LaunchIcon fontSize='smaller' /><a href='https://pinoen.github.io/weather/'>Weather App - The Odin Project</a></div>
+      {projects.map(project => (
+        <ProjectItem
+          key={project.web}
+          web={project.web}
+          name={project.name}
+        />
+      ))}
 
+      <AddProject open={open} handleClose={handleClose} />
     </div>
   )
 }

@@ -10,6 +10,7 @@ import EducationContextProvider from "./components/context/EducationContext";
 import ExperienceContextProvider from "./components/context/ExperienceContext";
 import TaskContextProvider from "./components/context/TaskContext";
 import SkillContextProvider from "./components/context/SkillContext";
+import ProjectsContextProvider from "./components/context/ProjectsContext";
 
 function App() {
   return (
@@ -32,7 +33,10 @@ function App() {
       <SkillContextProvider>
         <Skills />
       </SkillContextProvider>
-      <Projects />
+
+      <ProjectsContextProvider>
+        <Projects />
+      </ProjectsContextProvider>
       <Courses />
     </div>
   );
