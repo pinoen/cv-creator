@@ -1,9 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import { Button, TextField } from '@mui/material';
+import React, { useContext } from 'react';
 import { useFormik } from 'formik';
+import { HeaderContext } from '../context/HeaderContext';
+import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -17,39 +15,43 @@ const style = {
   p: 4,
 };
 
-// const fullName = document.querySelector('#full-name');
-// const jobTitle = document.querySelector('#job-title');
-// const profilePicture = document.querySelector('#profile-img');
-// const mobile = document.querySelector('#mobile');
-// const email = document.querySelector('#email');
-// const city = document.querySelector('#city');
-// const github = document.querySelector('#github');
-// const linkedin = document.querySelector('#linkedin');
+const EditHeader = ({ open, handleClose }) => {
 
-export default function EditHeader({ open, handleClose }) {
-  // const dataHeader = useFormik({
-  //   initialValues: {
-  //     fullName: fullName.textContent,
-  //     jobTitle: jobTitle.textContent,
-  //     profilePicture: profilePicture.textContent,
-  //     mobile: mobile.textContent,
-  //     email: email.textContent,
-  //     city: city.textContent,
-  //     github: github.textContent,
-  //     linkedin: linkedin.textContent
-  //   },
-  //   onSubmit: (data) => {
-  //     fullName.textContent = data.fullName
-  //     jobTitle.textContent = data.jobTitle;
-  //     profilePicture.src = data.profilePicture;
-  //     mobile.textContent = data.mobile;
-  //     email.textContent = data.email;
-  //     city.textContent = data.city;
-  //     github.textContent = data.github;
-  //     linkedin.textContent = data.linkedin;
-  //     handleClose()
-  //   }
-  // })
+
+  const { setUser } = useContext(HeaderContext)
+
+  const dataHeader = useFormik({
+    initialValues: {
+      fullName: 'FULL NAME',
+      jobTitle: 'Job Title',
+      profilePicture: 'https://avatars.githubusercontent.com/u/91059020?v=4',
+      mobile: '+xx x xxx xxxxxxx',
+      email: 'example@mail.com',
+      city: 'City, Country',
+      github: 'github.com/user',
+      linkedin: 'linkedin.com/in/user'
+    },
+    onSubmit: (data) => {
+      const dataUser = {
+        fullName: data.fullName,
+        jobTitle: data.jobTitle,
+        profilePicture: data.profilePicture,
+        mobile: data.mobile,
+        email: data.email,
+        city: data.city,
+        github: data.github,
+        linkedin: data.linkedin
+      }
+
+      console.log(data)
+
+      setUser(() => {
+        return [dataUser]
+      })
+
+      handleClose()
+    }
+  })
 
   return (
     <div>
@@ -60,22 +62,24 @@ export default function EditHeader({ open, handleClose }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {/* <form className='formContainer' onSubmit={dataHeader.handleSubmit} >
+          <form className='formContainer' onSubmit={dataHeader.handleSubmit} >
             <Typography variant='h4' color='primary' >Edit Header</Typography>
 
-            <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder={fullName.textContent} fullWidth />
-            <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder={jobTitle.textContent} fullWidth />
-            <TextField id="outlined-basic" label='Profile picture url' variant="outlined" name='profilePicture' onChange={dataHeader.handleChange} placeholder={profilePicture.src} fullWidth />
-            <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder={mobile.textContent} fullWidth />
-            <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder={email.textContent} fullWidth />
-            <TextField id="outlined-basic" label='City, Country' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder={city.textContent} fullWidth />
-            <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder={github.textContent} fullWidth />
-            <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder={linkedin.textContent} fullWidth />
+            <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder='Full name' fullWidth />
+            <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder='Job Title' fullWidth />
+            <TextField id="outlined-basic" label='Profile picture url' variant="outlined" name='profilePicture' onChange={dataHeader.handleChange} placeholder='Image url' fullWidth />
+            <TextField id="outlined-basic" label='Mobile number' variant="outlined" name='mobile' onChange={dataHeader.handleChange} placeholder='Mobile number' fullWidth />
+            <TextField id="outlined-basic" label='Email' variant="outlined" name='email' onChange={dataHeader.handleChange} placeholder='Email' fullWidth />
+            <TextField id="outlined-basic" label='City, Country' variant="outlined" name='city' onChange={dataHeader.handleChange} placeholder='City, Country' fullWidth />
+            <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder='GitHub user' fullWidth />
+            <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder='Linledin user' fullWidth />
 
             <Button type='submit' variant='contained' color='primary'>SAVE</Button>
-          </form> */}
+          </form>
         </Box>
       </Modal>
     </div>
   );
 }
+
+export default EditHeader

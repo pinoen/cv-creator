@@ -12,11 +12,14 @@ import TaskContextProvider from "./components/context/TaskContext";
 import SkillContextProvider from "./components/context/SkillContext";
 import ProjectsContextProvider from "./components/context/ProjectsContext";
 import CoursesContextProvider from "./components/context/CoursesContext";
+import HeaderContextProvider from "./components/context/HeaderContext";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <HeaderContextProvider>
+        <Header />
+      </HeaderContextProvider>
       <Summary />
 
       <EducationContextProvider>
