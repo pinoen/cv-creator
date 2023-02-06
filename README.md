@@ -15,6 +15,8 @@ The final result will be a pdf document containing a single-page CV with the fol
 ##### PROJECTS: Name and link to their webpages.
 ##### COURSES: Name and link to the certificates.
 
+## You can try it out at [Netlify - CV-CREATOR](https://cv-creator-pinoen.netlify.app/).
+
 ## Instructions
 
 ### `1 - Hover over the section you want to complet / edit and click the edit pencil buttom.`
