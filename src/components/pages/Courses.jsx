@@ -6,7 +6,7 @@ import { CoursesContext } from '../context/CoursesContext';
 import CourseItem from '../commons/CourseItem';
 
 const Courses = () => {
-  const [open, setOpen] = useState([])
+  const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 

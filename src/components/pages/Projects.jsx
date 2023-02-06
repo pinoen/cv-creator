@@ -6,7 +6,7 @@ import ProjectItem from '../commons/ProjectItem';
 import { ProjectsContext } from '../context/ProjectsContext';
 
 const Projects = () => {
-  const [open, setOpen] = useState([])
+  const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
