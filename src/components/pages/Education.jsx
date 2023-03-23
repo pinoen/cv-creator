@@ -4,6 +4,7 @@ import AddEducation from '../modals/AddEducation';
 import React, { useState, useContext } from 'react'
 import { EducationContext } from '../context/EducationContext';
 import EducationItem from '../commons/EducationItem';
+import { LanguageContext } from '../context/LanguageContext';
 
 
 const Education = () => {
@@ -12,6 +13,7 @@ const Education = () => {
   const handleClose = () => setOpen(false);
 
   const { education } = useContext(EducationContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-education').style.display = 'flex'
@@ -28,7 +30,7 @@ const Education = () => {
         <EditIcon on className='edit-education' />
       </IconButton>
 
-      <p className='section-title'>EDUCATION</p>
+      <p className='section-title'>{language ? "EDUCATION" : "EDUCACION"}</p>
       <hr></hr>
       {education.map(item => (
         <EducationItem

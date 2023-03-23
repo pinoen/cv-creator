@@ -4,6 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import AddCourse from '../modals/AddCourse';
 import { CoursesContext } from '../context/CoursesContext';
 import CourseItem from '../commons/CourseItem';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Courses = () => {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ const Courses = () => {
   const handleClose = () => setOpen(false)
 
   const { courses } = useContext(CoursesContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-courses').style.display = 'flex'
@@ -28,7 +30,7 @@ const Courses = () => {
         <EditIcon on className='edit-courses' />
       </IconButton>
 
-      <p className='section-title'>COURSES</p>
+      <p className='section-title'>{language ? "COURSES" : "CURSOS"}</p>
       <hr></hr>
       {courses.map(course => (
         <CourseItem

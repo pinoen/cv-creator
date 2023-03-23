@@ -3,6 +3,7 @@ import { Button, Modal, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
 import { EducationContext } from '../context/EducationContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const AddEducation = ({ open, handleClose }) => {
 
   const { setEducation } = useContext(EducationContext)
+  const { language } = useContext(LanguageContext)
 
   const dataEducation = useFormik({
     initialValues: {
@@ -57,7 +59,7 @@ const AddEducation = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataEducation.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Education</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Education" : "Agregar Educacion"}</Typography>
 
             <TextField id="outlined-basic" label='Career title' variant="outlined" name='career' placeholder='Career title' onChange={dataEducation.handleChange} fullWidth />
             <TextField id="outlined-basic" label='Institution' variant="outlined" name='institution' placeholder='Institution' onChange={dataEducation.handleChange} fullWidth />
@@ -66,7 +68,7 @@ const AddEducation = ({ open, handleClose }) => {
             <TextField id="outlined-basic" label='To' variant="outlined" name='until' placeholder='month/year' onChange={dataEducation.handleChange} fullWidth />
             <TextField id="outlined-basic" label='City, Country' variant="outlined" name='place' onChange={dataEducation.handleChange} placeholder='City, Country' fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

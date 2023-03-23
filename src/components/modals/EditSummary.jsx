@@ -3,6 +3,7 @@ import { Box } from '@mui/system'
 import React, { useContext } from 'react'
 import { useFormik } from 'formik';
 import { SummaryContext } from '../context/SummaryContext'
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const EditSummary = ({ open, handleClose }) => {
 
   const { setSummary } = useContext(SummaryContext)
+  const { language } = useContext(LanguageContext)
 
   const dataSummary = useFormik({
     initialValues: {
@@ -41,7 +43,7 @@ const EditSummary = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataSummary.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Edit Summary</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Edit Summary" : "Editar Intro"}</Typography>
 
             <TextField
               id="outlined-multiline-static"
@@ -53,7 +55,7 @@ const EditSummary = ({ open, handleClose }) => {
               onChange={dataSummary.handleChange}
               fullWidth
             />
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

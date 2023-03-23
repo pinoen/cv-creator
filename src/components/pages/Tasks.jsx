@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import AddTask from '../modals/addTask';
 import { TaskContext } from '../context/TaskContext';
 import TaskItem from '../commons/TaskItem';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Tasks = () => {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ const Tasks = () => {
   const handleClose = () => setOpen(false);
 
   const { task } = useContext(TaskContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-tasks').style.display = 'flex'
@@ -27,7 +29,7 @@ const Tasks = () => {
         <EditIcon on className='edit-tasks' />
       </IconButton>
 
-      <p className='section-title'>MAIN DUTIES AND RESPONSIBILITIES FROM PREVIOUS JOBS</p>
+      <p className='section-title'>{language ? "MAIN DUTIES AND RESPONSIBILITIES FROM PREVIOUS JOBS" : "RESPONSABILIDADES DE TRABAJOS PREVIOS"}</p>
       <hr></hr>
       {task.map(item => (
         <TaskItem

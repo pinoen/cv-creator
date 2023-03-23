@@ -4,6 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import AddProject from '../modals/AddProject';
 import ProjectItem from '../commons/ProjectItem';
 import { ProjectsContext } from '../context/ProjectsContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Projects = () => {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ const Projects = () => {
   const handleClose = () => setOpen(false)
 
   const { projects } = useContext(ProjectsContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-projects').style.display = 'flex'
@@ -27,7 +29,7 @@ const Projects = () => {
         <EditIcon on className='edit-projects' />
       </IconButton>
 
-      <p className='section-title'>PROJECTS</p>
+      <p className='section-title'>{language ? "PROJECTS" : "PROYECTOS"}</p>
       <hr></hr>
       {projects.map(project => (
         <ProjectItem

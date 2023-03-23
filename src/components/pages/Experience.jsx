@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import AddExperience from '../modals/AddExperience';
 import { ExperienceContext } from '../context/ExperienceContext';
 import ExperienceItem from '../commons/ExperienceItem';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Experience = () => {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ const Experience = () => {
   const handleClose = () => setOpen(false);
 
   const { experience } = useContext(ExperienceContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-experience').style.display = 'flex'
@@ -28,7 +30,7 @@ const Experience = () => {
         <EditIcon on className='edit-experience' />
       </IconButton>
 
-      <p className='section-title'>EXPERIENCE</p>
+      <p className='section-title'>{language ? "EXPERIENCE" : "EXPERIENCIA"}</p>
       <hr></hr>
       {experience.map(item => (
         <ExperienceItem

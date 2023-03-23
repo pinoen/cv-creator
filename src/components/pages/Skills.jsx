@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import AddSkill from '../modals/AddSkill';
 import { SkillContext } from '../context/SkillContext';
 import SkillsItems from '../commons/SkillsItems'
+import { LanguageContext } from '../context/LanguageContext';
 
 const Skills = () => {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ const Skills = () => {
   const handleClose = () => setOpen(false);
 
   const { skills } = useContext(SkillContext)
+  const { language } = useContext(LanguageContext)
 
   const handleMouseOver = () => {
     document.querySelector('.edit-skills').style.display = 'flex'
@@ -27,7 +29,7 @@ const Skills = () => {
         <EditIcon on className='edit-skills' />
       </IconButton>
 
-      <p className='section-title'>SKILLS</p>
+      <p className='section-title'>{language ? "SKILLS" : "HABILIDADES"}</p>
       <hr></hr>
       {skills.map((skill, index) => (
         <SkillsItems

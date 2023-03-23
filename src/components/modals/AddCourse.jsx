@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React, { useContext } from 'react'
 import { useFormik } from 'formik';
 import { CoursesContext } from '../context/CoursesContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 
 const style = {
@@ -20,6 +21,7 @@ const style = {
 const AddCourse = ({ open, handleClose }) => {
 
   const { setCourses } = useContext(CoursesContext)
+  const { language } = useContext(LanguageContext)
 
   const dataCourse = useFormik({
     initialValues: {
@@ -50,12 +52,12 @@ const AddCourse = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataCourse.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Course</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Course" : "Agregar Curso"}</Typography>
 
             <TextField id="outlined-basic" label='Course name' variant="outlined" name='name' placeholder='Course name' onChange={dataCourse.handleChange} fullWidth />
             <TextField id="outlined-basic" label='Certificate link' variant="outlined" name='web' placeholder='Certificate link' onChange={dataCourse.handleChange} fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

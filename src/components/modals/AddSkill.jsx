@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React, { useContext } from 'react'
 import { useFormik } from 'formik';
 import { SkillContext } from '../context/SkillContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const AddSkill = ({ open, handleClose }) => {
 
   const { setSkills } = useContext(SkillContext)
+  const { language } = useContext(LanguageContext)
 
   const dataSkill = useFormik({
     initialValues: {
@@ -59,7 +61,7 @@ const AddSkill = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataSkill.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Skills</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Skills" : "Agregar Habilidades"}</Typography>
 
             <TextField id="outlined-basic" label='Client-side' variant="outlined" name='client' placeholder='skill1, skill2, skill3, ...' onChange={dataSkill.handleChange} fullWidth />
             <TextField id="outlined-basic" label='Server-side' variant="outlined" name='server' placeholder='skill1, skill2, skill3, ...' onChange={dataSkill.handleChange} fullWidth />
@@ -69,7 +71,7 @@ const AddSkill = ({ open, handleClose }) => {
             <TextField id="outlined-basic" label='Soft-skills' variant="outlined" name='soft' onChange={dataSkill.handleChange} placeholder='skill1, skill2, skill3, ...' fullWidth />
             <TextField id="outlined-basic" label='Languages' variant="outlined" name='languages' onChange={dataSkill.handleChange} placeholder='skill1, skill2, skill3, ...' fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

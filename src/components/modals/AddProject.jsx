@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React, { useContext } from 'react'
 import { useFormik } from 'formik';
 import { ProjectsContext } from '../context/ProjectsContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const AddProject = ({ open, handleClose }) => {
 
   const { setProjects } = useContext(ProjectsContext)
+  const { language } = useContext(LanguageContext)
 
   const dataProject = useFormik({
     initialValues: {
@@ -49,12 +51,12 @@ const AddProject = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataProject.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Project</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Project" : "Agregar Proyecto"}</Typography>
 
             <TextField id="outlined-basic" label='Project name' variant="outlined" name='name' placeholder='Project name' onChange={dataProject.handleChange} fullWidth />
             <TextField id="outlined-basic" label='Project link' variant="outlined" name='web' placeholder='Project link' onChange={dataProject.handleChange} fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

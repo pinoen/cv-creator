@@ -3,6 +3,7 @@ import { Button, Modal, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
 import { TaskContext } from '../context/TaskContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const AddTask = ({ open, handleClose }) => {
 
   const { setTask } = useContext(TaskContext)
+  const { language } = useContext(LanguageContext)
 
   const dataTask = useFormik({
     initialValues: {
@@ -45,7 +47,7 @@ const AddTask = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataTask.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Task</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Task" : "Agregar Tarea"}</Typography>
 
             <TextField
               id="outlined-multiline-static"
@@ -58,7 +60,7 @@ const AddTask = ({ open, handleClose }) => {
               fullWidth
             />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

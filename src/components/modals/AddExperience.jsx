@@ -3,6 +3,7 @@ import { Button, Modal, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
 import { ExperienceContext } from '../context/ExperienceContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -19,6 +20,7 @@ const style = {
 const AddExperience = ({ open, handleClose }) => {
 
   const { setExperience } = useContext(ExperienceContext)
+  const { language } = useContext(LanguageContext)
 
   const dataExperience = useFormik({
     initialValues: {
@@ -57,7 +59,7 @@ const AddExperience = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataExperience.handleSubmit}>
-            <Typography variant='h4' color={'primary'}>Add Experience</Typography>
+            <Typography variant='h4' color={'primary'}>{language ? "Add Experience" : "Agregar Experiencia"}</Typography>
 
             <TextField id="outlined-basic" label='Role' variant="outlined" name='role' placeholder='Role' onChange={dataExperience.handleChange} fullWidth />
             <TextField id="outlined-basic" label='Company' variant="outlined" name='company' placeholder='Company' onChange={dataExperience.handleChange} fullWidth />
@@ -66,7 +68,7 @@ const AddExperience = ({ open, handleClose }) => {
             <TextField id="outlined-basic" label='To' variant="outlined" name='until' placeholder='month/year' onChange={dataExperience.handleChange} fullWidth />
             <TextField id="outlined-basic" label='City, Country' variant="outlined" name='place' onChange={dataExperience.handleChange} placeholder='City, Country' fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

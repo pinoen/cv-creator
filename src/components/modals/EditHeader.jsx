@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import { HeaderContext } from '../context/HeaderContext';
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
+import { LanguageContext } from '../context/LanguageContext';
 
 const style = {
   position: 'absolute',
@@ -17,8 +18,12 @@ const style = {
 
 const EditHeader = ({ open, handleClose }) => {
 
-
   const { setUser } = useContext(HeaderContext)
+  const { language, setLanguage } = useContext(LanguageContext)
+
+  const switchLanguage = () => {
+    setLanguage(prev => !prev)
+  }
 
   const dataHeader = useFormik({
     initialValues: {
@@ -61,7 +66,8 @@ const EditHeader = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form className='formContainer' onSubmit={dataHeader.handleSubmit} >
-            <Typography variant='h4' color='primary' >Edit Header</Typography>
+            <Button onClick={switchLanguage} >switch to {language ? "Spanish" : "English"}</Button>
+            <Typography variant='h4' color='primary' >{language ? "Edit Header" : "Editar Encabezado"}</Typography>
 
             <TextField id="outlined-basic" label='Full name' variant="outlined" name='fullName' onChange={dataHeader.handleChange} placeholder='Full name' fullWidth />
             <TextField id="outlined-basic" label='Job title' variant="outlined" name='jobTitle' onChange={dataHeader.handleChange} placeholder='Job Title' fullWidth />
@@ -72,7 +78,7 @@ const EditHeader = ({ open, handleClose }) => {
             <TextField id="outlined-basic" label='Github account' variant="outlined" name='github' onChange={dataHeader.handleChange} placeholder='GitHub user' fullWidth />
             <TextField id="outlined-basic" label='Linkedin account' variant="outlined" name='linkedin' onChange={dataHeader.handleChange} placeholder='Linledin user' fullWidth />
 
-            <Button type='submit' variant='contained' color='primary'>SAVE</Button>
+            <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
         </Box>
       </Modal>

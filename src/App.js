@@ -15,11 +15,13 @@ import CoursesContextProvider from "./components/context/CoursesContext";
 import HeaderContextProvider from "./components/context/HeaderContext";
 import SummaryContextProvider from "./components/context/SummaryContext";
 import Swal from 'sweetalert2'
+import LanguageContextProvider from "./components/context/LanguageContext";
+
 
 window.addEventListener('load', () => {
   Swal.fire(
     'Instructions',
-    'Hover over the section you want to complete and click the pencil. After complete a form click the SAVE button. When you have completed all sections, press CTL + P to print out your CV as a pdf document.',
+    'Hover over the section you want to complete and click the pencil. In the Header Section you can switch your CV language to Spanish. After complete a form click the SAVE button. When you have completed all sections, press CTL + P to print out your CV as a pdf document.',
     'info'
   )
 })
@@ -27,37 +29,40 @@ window.addEventListener('load', () => {
 function App() {
   return (
     <div className="App">
-      <HeaderContextProvider>
-        <Header />
-      </HeaderContextProvider>
+      <LanguageContextProvider>
 
-      <SummaryContextProvider>
-        <Summary />
-      </SummaryContextProvider>
+        <HeaderContextProvider>
+          <Header />
+        </HeaderContextProvider>
 
-      <EducationContextProvider>
-        <Education />
-      </EducationContextProvider>
+        <SummaryContextProvider>
+          <Summary />
+        </SummaryContextProvider>
 
-      <ExperienceContextProvider>
-        <Experience />
-      </ExperienceContextProvider>
+        <EducationContextProvider>
+          <Education />
+        </EducationContextProvider>
 
-      <TaskContextProvider>
-        <Tasks />
-      </TaskContextProvider>
+        <ExperienceContextProvider>
+          <Experience />
+        </ExperienceContextProvider>
 
-      <SkillContextProvider>
-        <Skills />
-      </SkillContextProvider>
+        <TaskContextProvider>
+          <Tasks />
+        </TaskContextProvider>
 
-      <ProjectsContextProvider>
-        <Projects />
-      </ProjectsContextProvider>
+        <SkillContextProvider>
+          <Skills />
+        </SkillContextProvider>
 
-      <CoursesContextProvider>
-        <Courses />
-      </CoursesContextProvider>
+        <ProjectsContextProvider>
+          <Projects />
+        </ProjectsContextProvider>
+
+        <CoursesContextProvider>
+          <Courses />
+        </CoursesContextProvider>
+      </LanguageContextProvider>
     </div>
   );
 }
