@@ -20,8 +20,9 @@ The final result will be a pdf document containing a single-page CV with the fol
 ## Instructions
 
 ### `1 - Hover over the section you want to complet / edit and click the edit pencil buttom.`
-### `2 - After complete a form click the SAVE button.`
-### `3 - When you've completed all section, press CTL + P to print out your CV as a pdf document.`
+### `2 - In the Header Section you can switch your CV language to Spanish.`
+### `3 - After complete a form click the SAVE button.`
+### `4 - When you've completed all section, press CTL + P to print out your CV as a pdf document.`
 
 
 ### Dependencies for this project:
