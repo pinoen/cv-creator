@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const EducationContext = createContext()
 
 const EducationContextProvider = ({ children }) => {
 
-  const [education, setEducation] = useState([])
+  const [education, setEducation] = useLocalStorageState([], 'education')
 
   const data = {
     education,

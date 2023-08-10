@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const ExperienceContext = createContext()
 
 const ExperienceContextProvider = ({ children }) => {
 
-  const [experience, setExperience] = useState([])
+  const [experience, setExperience] = useLocalStorageState([], 'experience')
 
   const data = {
     experience,

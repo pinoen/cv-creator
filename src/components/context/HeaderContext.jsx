@@ -1,10 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const HeaderContext = createContext()
 
 const HeaderContextProvider = ({ children }) => {
 
-  const [user, setUser] = useState([])
+
+  const [user, setUser] = useLocalStorageState([], 'header')
 
   const data = {
     user,

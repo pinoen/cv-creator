@@ -1,10 +1,11 @@
-import { createContext, useState } from 'react'
+import { createContext } from 'react'
+import { useLocalStorageState } from '../hooks/useLocalStorageState'
 
 export const ProjectsContext = createContext()
 
 const ProjectsContextProvider = ({ children }) => {
 
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useLocalStorageState([], 'projects')
 
   const data = {
     projects,

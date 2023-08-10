@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const TaskContext = createContext()
 
 const TaskContextProvider = ({ children }) => {
 
-  const [task, setTask] = useState([])
+  const [task, setTask] = useLocalStorageState([], 'tasks')
 
   const data = {
     task,

@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const SummaryContext = createContext()
 
 const SummaryContextProvider = ({ children }) => {
 
-  const [summary, setSummary] = useState('')
+  const [summary, setSummary] = useLocalStorageState("", "summary")
 
   const data = {
     summary,

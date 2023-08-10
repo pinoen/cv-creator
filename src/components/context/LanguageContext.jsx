@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 export const LanguageContext = createContext()
 
 const LanguageContextProvider = ({ children }) => {
 
-  const [language, setLanguage] = useState(true)
+  const [language, setLanguage] = useLocalStorageState(true, 'language')
 
   const data = {
     language,
