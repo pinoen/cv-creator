@@ -23,8 +23,8 @@ const Education = () => {
   }
   return (
     <div className='education-container'
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      onMouseEnter={handleMouseOver}
+      onMouseLeave={handleMouseOut}
     >
       <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-education' />
@@ -35,12 +35,7 @@ const Education = () => {
       {education.map(item => (
         <EducationItem
           key={item.career}
-          career={item.career}
-          institution={item.institution}
-          web={item.web}
-          from={item.from}
-          until={item.until}
-          place={item.place}
+          education={item}
         />
       ))}
 

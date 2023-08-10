@@ -22,8 +22,8 @@ const Skills = () => {
   }
   return (
     <div className='skills-container'
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      onMouseEnter={handleMouseOver}
+      onMouseLeave={handleMouseOut}
     >
       <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-skills' />

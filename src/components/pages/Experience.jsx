@@ -23,8 +23,8 @@ const Experience = () => {
   }
   return (
     <div className='experience-container'
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      onMouseEnter={handleMouseOver}
+      onMouseLeave={handleMouseOut}
     >
       <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-experience' />
@@ -35,12 +35,7 @@ const Experience = () => {
       {experience.map(item => (
         <ExperienceItem
           key={item.company}
-          role={item.role}
-          company={item.company}
-          web={item.web}
-          from={item.from}
-          until={item.until}
-          place={item.place}
+          experience={item}
         />
       ))}
 

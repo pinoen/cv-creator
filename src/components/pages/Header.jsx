@@ -21,8 +21,8 @@ const Header = () => {
 
   return (
     <div className='header-container'
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}>
+      onMouseEnter={handleMouseOver}
+      onMouseLeave={handleMouseOut}>
 
       <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-header' />
@@ -30,6 +30,7 @@ const Header = () => {
 
       {user.map(data => (
         <HeaderItem
+          key={data.email}
           fullName={data.fullName}
           jobTitle={data.jobTitle}
           profilePicture={data.profilePicture}

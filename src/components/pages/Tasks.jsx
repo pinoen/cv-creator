@@ -20,10 +20,11 @@ const Tasks = () => {
   const handleMouseOut = () => {
     document.querySelector('.edit-tasks').style.display = 'none'
   }
+
   return (
     <div className='tasks-container'
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      onMouseEnter={handleMouseOver}
+      onMouseLeave={handleMouseOut}
     >
       <IconButton aria-label="edit" color="secondary" onClick={handleOpen}>
         <EditIcon on className='edit-tasks' />
