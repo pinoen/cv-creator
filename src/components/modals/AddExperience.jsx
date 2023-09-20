@@ -29,7 +29,10 @@ const AddExperience = ({ open, handleClose }) => {
       web: '',
       from: '',
       until: '',
-      place: ''
+      place: '',
+      title: '',
+      description: '',
+      tools: ''
     },
     onSubmit: (data) => {
       const item = {
@@ -38,7 +41,10 @@ const AddExperience = ({ open, handleClose }) => {
         web: data.web,
         from: data.from,
         until: data.until,
-        place: data.place
+        place: data.place,
+        title: data.title,
+        description: data.description,
+        tools: data.tools
       }
 
       setExperience(preItems => {
@@ -67,6 +73,11 @@ const AddExperience = ({ open, handleClose }) => {
             <TextField id="outlined-basic" label='From' variant="outlined" name='from' placeholder='month/year' onChange={dataExperience.handleChange} fullWidth />
             <TextField id="outlined-basic" label='To' variant="outlined" name='until' placeholder='month/year' onChange={dataExperience.handleChange} fullWidth />
             <TextField id="outlined-basic" label='City, Country' variant="outlined" name='place' onChange={dataExperience.handleChange} placeholder='City, Country' fullWidth />
+
+            <TextField id="outlined-basic" label='Title' variant="outlined" name='title' onChange={dataExperience.handleChange} placeholder='Title' fullWidth />
+            <TextField id="outlined-basic" label='Description' variant="outlined" name='description' onChange={dataExperience.handleChange} placeholder='Description' fullWidth />
+            <TextField id="outlined-basic" label='Tools' variant="outlined" name='tools' onChange={dataExperience.handleChange} placeholder='Tools' fullWidth />
+
 
             <Button type='submit' variant='contained' color='primary'>{language ? "SAVE" : "GUARDAR"}</Button>
           </form>
