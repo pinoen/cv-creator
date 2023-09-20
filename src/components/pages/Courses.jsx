@@ -30,7 +30,7 @@ const Courses = () => {
         <EditIcon on className='edit-courses' />
       </IconButton>
 
-      <p className='section-title'>{language ? "COURSES" : "CURSOS"}</p>
+      <p className='section-title'>{language ? "COURSES & CERTIFICATIONS" : "CURSOS & CERTIFICACIONES"}</p>
       <hr></hr>
       {courses.map(course => (
         <CourseItem
