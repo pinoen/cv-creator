@@ -29,6 +29,10 @@ const ExperienceItem = ({ experience }) => {
         </div>
         {showDeleteBtn && <IconButton onClick={() => deleteItem(experience.company)}><ClearIcon fontSize='smaller' color='error' /></IconButton>}
       </div>
+      <p>{experience.title}</p>
+      <p>{experience.description}</p>
+      <p>{experience.tools}</p>
+
     </>
   )
 }
