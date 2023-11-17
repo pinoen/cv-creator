@@ -34,7 +34,7 @@ const AddProject = ({ open, handleClose }) => {
       }
 
       setProjects(preItems => {
-        return [...preItems, item]
+        return [item, ...preItems]
       })
 
       handleClose()

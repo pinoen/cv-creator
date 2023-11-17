@@ -30,7 +30,7 @@ const AddTask = ({ open, handleClose }) => {
       const item = data.task
 
       setTask(preItems => {
-        return [...preItems, item]
+        return [item, ...preItems]
       })
 
       handleClose()
@@ -54,7 +54,7 @@ const AddTask = ({ open, handleClose }) => {
               label="TASK"
               multiline
               rows={4}
-              placeholder='Add a task or responsality'
+              placeholder='Add a task or responsability'
               name='task'
               onChange={dataTask.handleChange}
               fullWidth

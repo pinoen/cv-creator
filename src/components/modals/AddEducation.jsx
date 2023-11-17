@@ -42,7 +42,7 @@ const AddEducation = ({ open, handleClose }) => {
       }
 
       setEducation(preItems => {
-        return [...preItems, item]
+        return [item, ...preItems]
       })
 
       handleClose()

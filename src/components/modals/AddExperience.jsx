@@ -48,7 +48,7 @@ const AddExperience = ({ open, handleClose }) => {
       }
 
       setExperience(preItems => {
-        return [...preItems, item]
+        return [item, ...preItems]
       })
 
       handleClose()

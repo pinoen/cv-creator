@@ -35,7 +35,7 @@ const AddCourse = ({ open, handleClose }) => {
       }
 
       setCourses(preItems => {
-        return [...preItems, item]
+        return [item, ...preItems]
       })
 
       handleClose()
