@@ -23,7 +23,7 @@ body{
   margin: 30px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(5, 1fr) 1.3fr;
+  grid-template-rows: repeat(10, 1fr) 1fr;
   color: blueviolet;
   width: 210mm;
   height: 297mm;
@@ -52,30 +52,33 @@ body{
 }
 
 .experience-container{
-  padding: 0px 20px;
+  padding: 20px 20px;
   grid-column: 1 / 2;
-  grid-row: 4 / 6;
+  grid-row: 4 / 9;
 }
 
 .tasks-container{
-  padding: 0px 20px;
+  padding: 40px 20px;
   grid-column: 1 / 2;
+  grid-row: 10 / 12;
 }
 
 .skills-container{
   padding: 0px 20px;
   grid-column: 2 / 3;
-  grid-row: 2 / 5;
+  grid-row: 2 / 6;
 }
 
 .projects-container{
   padding: 0px 20px;
   grid-column: 2 / 3;
-  grid-row: 5 / 6;
+  grid-row: 9 / 10;
 }
 
 .courses-container{
   padding: 0px 20px;
+  grid-column: 2 / 3;
+  grid-row: 10 / 11;
 }
 
 h1, h3{
@@ -138,7 +141,7 @@ span{
   display: flex;
   gap: 5px;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .education-style-icons, .experience-style-icons{
@@ -162,7 +165,7 @@ span{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .project-box, .course-box{
